@@ -1,14 +1,39 @@
 
 exports.querySelector = (query,html) => {
     // <p>?(.*?)</p>
-    const reg = new RegExp(`<${query}>?(.*?)<\/${query}>`,'sg');
+    let attrGetter = /(\w*)?\.?(\w*)#?(\w*)(?:\[(\w*)=["']?(\w*)["']?\])?/gi;
+    let [queryString,tagName,className,idName, attr, attrval] = attrGetter.exec(query);
+
+    console.log("Tag: "+tagName);
+    console.log("Class: "+className);
+    console.log("ID: "+idName);
+    console.log(attr +"="+attrval);
+
+
+    let htmlMatcher;
+    if(!className && !idName && !attr && tagName){
+        htmlMatcher = new RegExp(`<${tagName}>?(.*?)<\/${tagName}>`,'sg');
+    }else{
+        if(className){
+            attr = 'class';
+            attrval = className;
+        }else if(idName){
+            attr = 'id';
+            attrval = idName;
+        }
+
+        htmlMatcher = new RegExp(`<div.*?${attr}="${attrval}".*?>(.*?)<\/div>`,'sg');
+    }
+
     let matches = [];
-    let match = reg.exec(html);
+    let match = htmlMatcher.exec(html);
+    
     while(match){
         matches.push(match[1]);
-        match = reg.exec(html);
+        match = htmlMatcher.exec(html);
     }
 
     return matches;
+    // return 1;
 }
 

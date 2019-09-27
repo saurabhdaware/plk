@@ -38,4 +38,4 @@ const html = `<!DOCTYPE html>
   </body>
 </html>`;
 
-console.log(plk.querySelector('p',html));
+console.log(plk.querySelector('div',html));
