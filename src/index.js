@@ -1,5 +1,5 @@
 
-exports.pluckByQuery = (query,html) => {
+exports.byQuery = (query,html) => {
     // <p>?(.*?)</p>
     let attrGetter = /(\w*)?\.?(\w*)#?(\w*)(?:\[(\w*)=["']?(\w*)["']?\])?/gi;
     let [queryString,tagName,className,idName, attr, attrval] = attrGetter.exec(query);

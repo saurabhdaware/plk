@@ -38,4 +38,4 @@ const html = `<!DOCTYPE html>
   </body>
 </html>`;
 
-console.log(plk.pluckByQuery('p',html));
+console.log(plk.byQuery('p',html));
