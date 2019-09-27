@@ -1,10 +1,12 @@
 {
   "name": "plk",
   "version": "0.0.0",
-  "description": "Query over your scrapped html with native js query syntax",
+  "description": "Query over your scrapped html with native document.querySelector() syntax",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/example.js",
+    "example": "node src/example.js"
   },
   "repository": {
     "type": "git",

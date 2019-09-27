@@ -1,14 +1,14 @@
-String.prototype.querySelector = function(){
-    const result = this
-        .trim()
-        .replace(/\n/g,"")
-        .split(/>/g)
-        .map(el =>{
 
-            return {
-                innerHTML:el.slice(0,el.indexOf('<')),
-                el:el + '>'
-            }
-        })
-    return result;
+exports.querySelector = (query,html) => {
+    // <p>?(.*?)</p>
+    const reg = new RegExp(`<${query}>?(.*?)<\/${query}>`,'sg');
+    let matches = [];
+    let match = reg.exec(html);
+    while(match){
+        matches.push(match[1]);
+        match = reg.exec(html);
+    }
+
+    return matches;
 }
+
