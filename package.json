@@ -1,6 +1,6 @@
 {
   "name": "plk",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.1",
   "description": "Query over your scrapped html with native document.querySelector() syntax",
   "main": "dist/index.js",
   "scripts": {
