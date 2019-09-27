@@ -3,7 +3,8 @@ Query over your scrapped html with native js query syntax simply using `plk.byQu
 
 Umm.. You're too early **D:** 
 
-This is not ready to be used yet. You can contact me on my [twitter@saurabhcodes](https://twitter.com/saurabhcodes) for any help with contributions.
+
+**This is not ready to be used yet. You can contact me on my [twitter@saurabhcodes](https://twitter.com/saurabhcodes) for any help with contributions.**
 
 ## Usage
 ```js
@@ -31,4 +32,9 @@ const html = `<!DOCTYPE html>
 </html>`;
 
 console.log(plk.byQuery('p',html));
+```
+
+Outputs:
+```js
+[ 'This is some paragraph inside div tag.', 'This is some paragraph inside mewdiv tag.' ]
 ```
