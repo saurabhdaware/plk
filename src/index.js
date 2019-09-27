@@ -1,14 +1,8 @@
 
-exports.querySelector = (query,html) => {
+exports.pluckByQuery = (query,html) => {
     // <p>?(.*?)</p>
     let attrGetter = /(\w*)?\.?(\w*)#?(\w*)(?:\[(\w*)=["']?(\w*)["']?\])?/gi;
     let [queryString,tagName,className,idName, attr, attrval] = attrGetter.exec(query);
-
-    console.log("Tag: "+tagName);
-    console.log("Class: "+className);
-    console.log("ID: "+idName);
-    console.log(attr +"="+attrval);
-
 
     let htmlMatcher;
     if(!className && !idName && !attr && tagName){
